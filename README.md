@@ -1,144 +1,107 @@
-# 🌍 NGO Impact Analysis Dashboard (Power BI Project)
+# 🌍 NGO Fund Allocation using Unsupervised Machine Learning
 
 ## 📘 Project Overview
+HELP International is an international humanitarian NGO dedicated to eradicating poverty and improving living conditions for people in underdeveloped countries. 
+After successfully raising **$10 million** through recent funding programs, the organization aims to **allocate these funds strategically and effectively** to the countries most in need of aid.
 
-This project focuses on analyzing **the impact, efficiency, and sustainability of NGO projects** across different sectors and regions.  
-Using data-driven insights, the dashboard highlights how effectively NGOs utilize funding to achieve measurable social and environmental outcomes.
-
-The dashboard was developed in **Power BI** and provides a clear, interactive view of key performance indicators (KPIs) such as funding utilization, impact scores, beneficiary reach, and sustainability index.
-
----
-
-## 🎯 Objectives
-
-- Evaluate NGO performance and project impact.
-- Compare sector-wise and region-wise funding efficiency.
-- Analyze trends in funding and impact over time.
-- Identify high-performing NGOs and areas for improvement.
-- Enable data-backed decision-making for donors and administrators.
+This project leverages **Unsupervised Machine Learning (Clustering)** techniques to identify and group countries based on various socio-economic and health indicators. The analysis helps decision-makers **prioritize countries** requiring immediate attention and funding.
 
 ---
 
-## 📊 Dashboard Features
+## 🧠 Problem Statement
+The CEO of HELP International needs to determine **which countries should receive aid** based on their overall development status.
+The challenge lies in analyzing multidimensional data (economic, health, education, etc.) to find patterns without any predefined labels.
 
-### **1️⃣ Overview Dashboard**
-- Total Funding, Total Beneficiaries, Distinct NGOs, Total Projects
-- Average Impact & Sustainability Index
-- Sector distribution (Pie chart)
-- Region-wise Impact (Map visualization)
+By applying clustering algorithms, the project classifies countries into different groups based on their need for financial assistance — enabling more **data-driven fund allocation decisions**.
 
-### **2️⃣ Sector Analysis**
-- Funding vs Impact Score by Sector
-- Beneficiaries by Sector
-- Sustainability comparison among sectors
+---
 
-### **3️⃣ Regional Insights**
-- Funding and Impact by Region
-- Funding Efficiency (Impact per Beneficiary)
-- Regional Funding Map Visualization
+## 🎯 Project Objective
+- Analyze the socio-economic data of countries.
+- Identify clusters of countries with similar development characteristics.
+- Determine the cluster(s) representing countries most in need of aid.
+- Support HELP International in effective fund allocation based on insights.
 
-### **4️⃣ Funding & Efficiency**
-- Funding Trend (Yearly)
-- Impact Trend (Yearly)
-- Cost Efficiency (Impact per $1000)
-- Project Duration Distribution
+---
 
-### **5️⃣ Sustainability Overview**
-- Sustainability vs Funding Scatter Plot
-- Average Sustainability by Sector
-- Project Duration Analysis
+## 🧩 Approach
+
+### 1️⃣ Data Understanding
+- Dataset: **Country Data** from Kaggle or open international datasets.
+- Features include:
+  - GDP per capita
+  - Health expenditure
+  - Infant mortality rate
+  - Literacy rate
+  - Population growth
+  - Life expectancy
+  - Other socio-economic indicators
+
+### 2️⃣ Data Preprocessing
+- Handling missing values
+- Scaling and normalization
+- Exploratory Data Analysis (EDA)
+  - Correlation between indicators
+  - Distribution analysis
+  - Outlier detection
+
+### 3️⃣ Model Building
+- **Algorithms Used:**
+  - K-Means Clustering
+  - Hierarchical Clustering
+  - DBSCAN (for density-based grouping)
+
+- **Evaluation Methods:**
+  - Elbow Method & Silhouette Score for optimal cluster selection
+  - Visualization using PCA (Principal Component Analysis) and 2D scatter plots
+
+### 4️⃣ Insights & Interpretation
+- Countries are grouped into distinct clusters based on development metrics.
+- The cluster(s) with **low GDP, high infant mortality, and low life expectancy** are identified as **high-priority countries** for funding.
+
+### 5️⃣ Visualization & Dashboard
+- Developed an **interactive Power BI dashboard** displaying:
+  - Cluster distributions across world map
+  - Economic and health comparisons
+  - Country-wise ranking by development index
+  - Fund allocation recommendations
 
 ---
 
 ## ⚙️ Tech Stack
 
-| Component | Tool / Technology |
-|------------|------------------|
-| **Data Analysis & Visualization** | Power BI |
-| **Data Source** | CSV / Excel / Kaggle Dataset |
-| **Data Cleaning** | Power Query (M Language) |
-| **KPIs & Metrics** | DAX (Data Analysis Expressions) |
-| **Presentation** | PowerPoint (PPT) |
-| **Deployment** | Power BI Service (Cloud-based) |
+| Category | Tools & Libraries |
+|-----------|------------------|
+| **Programming Language** | Python 🐍 |
+| **Libraries** | pandas, numpy, matplotlib, seaborn, scikit-learn, plotly |
+| **Algorithm** | K-Means, Hierarchical Clustering, DBSCAN |
+| **Visualization** | Power BI, Matplotlib, Seaborn |
+| **Environment** | Jupyter Notebook |
 
 ---
 
-## 🧠 Data Description
-
-| Column | Description |
-|---------|-------------|
-| NGO_Name | Name of the NGO |
-| Project_Name | Title of the project |
-| Sector | Focus area (Health, Education, Environment, etc.) |
-| Region | Geographic area of operation |
-| Country | Country of implementation |
-| Funding_Amount | Total funding received |
-| Beneficiaries | Number of people impacted |
-| Start_Date / End_Date | Project timeline |
-| Impact_Score | Quantitative measure of success |
-| Sustainability_Index | Long-term viability indicator |
+## 📊 Key Deliverables
+- Cleaned and preprocessed dataset
+- EDA with visual insights
+- Clustering results and evaluation
+- Power BI dashboard for NGO decision-making
+- Recommendations for optimal fund allocation
 
 ---
 
-## 🧮 Key Metrics (DAX Measures)
-
-- **Total Funding** = SUM(Funding_Amount)  
-- **Total Beneficiaries** = SUM(Beneficiaries)  
-- **Average Impact Score** = AVERAGE(Impact_Score)  
-- **Average Sustainability Index** = AVERAGE(Sustainability_Index)  
-- **Funding per Beneficiary** = Total Funding / Total Beneficiaries  
-- **Impact per 1000 Funding** = Average Impact Score / (Total Funding / 1000)
+## 💡 Insights
+- Cluster 0: Highly developed countries — minimal aid required
+- Cluster 1: Developing nations — moderate funding needed
+- Cluster 2: Underdeveloped nations — require **immediate support and majority of funding**
 
 ---
 
-## 🪄 Insights Gained
-
-- The **Education and Health sectors** show the highest impact efficiency per funding unit.  
-- Regions with **longer project durations** tend to have higher sustainability.  
-- **Funding allocation** is uneven across sectors — suggesting opportunities for optimization.  
-- Projects with **balanced funding and high sustainability** have better long-term results.
+## 📈 Future Improvements
+- Incorporate time-series data to monitor development trends
+- Use weighted scoring for more granular fund distribution
+- Deploy an interactive web app for real-time analysis
 
 ---
 
-## 📤 Deliverables
-
-- ✅ Power BI Dashboard (`.pbix`)
-- ✅ Data Processing Script (Power Query + DAX)
-- ✅ PowerPoint Presentation summarizing insights
-- ✅ Dataset (CSV/Excel)
-- ✅ README Documentation
-
----
-
-## 🚀 How to Use
-
-1. Open Power BI Desktop.
-2. Import dataset (`ngo_data.csv` or Excel file).
-3. Load Power Query transformations.
-4. Create DAX measures as listed above.
-5. Build visuals following the layout in this README.
-6. Publish the dashboard to Power BI Service.
-7. Export dashboard insights into PowerPoint.
-
----
-
-## 🌐 Future Enhancements
-
-- Automate data refresh using Power BI Gateway.
-- Integrate live data from NGO APIs or Google Sheets.
-- Add predictive models (e.g., regression on impact score).
-- Enable donor-specific dashboards and funding filters.
-
----
-
-## 🧑‍💼 Author
-
-**Project Title:** NGO Impact Analysis Dashboard  
-**Developed by:** Sneha Biswas  
-**Tools Used:** Power BI, DAX, Power Query, Excel  
-**Purpose:** To measure and visualize NGO project performance and social impact.  
-
----
-
-### ⭐ If you like this project, don’t forget to star the repository!
-
+## 🙌 Acknowledgments
+Special thanks to **HELP International NGO** for providing the problem statement and inspiration, and to **Kaggle** for the dataset.
