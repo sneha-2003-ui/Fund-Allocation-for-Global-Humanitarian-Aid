@@ -1,86 +1,144 @@
-# 🏦 **Need Bank Loan or Not**
+# 🌍 NGO Impact Analysis Dashboard (Power BI Project)
 
-## 📘 **Project Overview**
+## 📘 Project Overview
 
-This project predicts whether a person is **eligible for a bank loan** based on their personal and financial details.  
-Users provide information such as **income, credit history, loan amount**, and other factors, and the trained model predicts if the applicant is likely to be approved or not.
+This project focuses on analyzing **the impact, efficiency, and sustainability of NGO projects** across different sectors and regions.  
+Using data-driven insights, the dashboard highlights how effectively NGOs utilize funding to achieve measurable social and environmental outcomes.
 
-The model is **deployed as a web application on Render**, allowing users to test real-time loan eligibility predictions through an easy-to-use interface.
-
----
-
-## 🚀 **Key Features**
-- ✅ **Predicts loan eligibility** based on user input  
-- ⚙️ **Built using multiple machine learning models**  
-- 🌐 **Deployed as an interactive web app** using Flask on Render  
-- ⏱️ **Supports real-time prediction**
+The dashboard was developed in **Power BI** and provides a clear, interactive view of key performance indicators (KPIs) such as funding utilization, impact scores, beneficiary reach, and sustainability index.
 
 ---
 
-## 🧠 **Machine Learning Models Used**
+## 🎯 Objectives
 
-The project compares several ML algorithms to identify the best-performing one:
-- **Logistic Regression**  
-- **Decision Tree Classifier**  
-- **Random Forest Classifier**  
-- **Gradient Boosting Classifier**  
-- **XGBoost Classifier**  
-- **AdaBoost Classifier**
-
-The model achieving the **highest accuracy and generalization score** was chosen for deployment.
+- Evaluate NGO performance and project impact.
+- Compare sector-wise and region-wise funding efficiency.
+- Analyze trends in funding and impact over time.
+- Identify high-performing NGOs and areas for improvement.
+- Enable data-backed decision-making for donors and administrators.
 
 ---
 
-## 📊 **Dataset**
+## 📊 Dashboard Features
 
-- **Source:** Kaggle (Loan Prediction Dataset)  
-- **Description:**  
-  The dataset contains applicant information such as:
-  - Gender, Marital Status, Education, Dependents  
-  - Applicant and Coapplicant Income  
-  - Loan Amount, Loan Term  
-  - Credit History  
-  - Property Area  
-  - Loan Status (Target variable)
+### **1️⃣ Overview Dashboard**
+- Total Funding, Total Beneficiaries, Distinct NGOs, Total Projects
+- Average Impact & Sustainability Index
+- Sector distribution (Pie chart)
+- Region-wise Impact (Map visualization)
 
----
+### **2️⃣ Sector Analysis**
+- Funding vs Impact Score by Sector
+- Beneficiaries by Sector
+- Sustainability comparison among sectors
 
-## ⚙️ **Tech Stack**
-- **Language:** Python 🐍  
-- **Libraries:** pandas, numpy, matplotlib, seaborn, scikit-learn, xgboost  
-- **Model Deployment:** Flask + Render  
-- **Environment:** Jupyter Notebook
+### **3️⃣ Regional Insights**
+- Funding and Impact by Region
+- Funding Efficiency (Impact per Beneficiary)
+- Regional Funding Map Visualization
 
----
+### **4️⃣ Funding & Efficiency**
+- Funding Trend (Yearly)
+- Impact Trend (Yearly)
+- Cost Efficiency (Impact per $1000)
+- Project Duration Distribution
 
-## 🧩 **Project Workflow**
-
-### 🔹 Data Preprocessing
-- Handled missing values  
-- Encoded categorical features  
-- Scaled numerical data  
-
-### 🔹 Exploratory Data Analysis (EDA)
-- Visualized correlations between income, loan amount, and loan status  
-- Identified key features influencing approval  
-
-### 🔹 Model Training and Evaluation
-- Trained multiple ML models  
-- Evaluated performance using **accuracy, precision, recall, and F1-score**  
-- Selected the **best-performing model** for deployment  
-
-### 🔹 Deployment
-- Created a **Flask web interface**  
-- Integrated the model for real-time prediction  
-- **Deployed on Render** for public access  
+### **5️⃣ Sustainability Overview**
+- Sustainability vs Funding Scatter Plot
+- Average Sustainability by Sector
+- Project Duration Analysis
 
 ---
 
-## 🌐 **Live Demo**
-👉 [**Try the App on Render**](https://customer-loan-conversion-prediction.onrender.com/)
+## ⚙️ Tech Stack
+
+| Component | Tool / Technology |
+|------------|------------------|
+| **Data Analysis & Visualization** | Power BI |
+| **Data Source** | CSV / Excel / Kaggle Dataset |
+| **Data Cleaning** | Power Query (M Language) |
+| **KPIs & Metrics** | DAX (Data Analysis Expressions) |
+| **Presentation** | PowerPoint (PPT) |
+| **Deployment** | Power BI Service (Cloud-based) |
 
 ---
 
-## 🏁 **Conclusion**
-This project demonstrates how **machine learning can automate loan eligibility prediction** effectively.  
-By combining multiple algorithms and deploying the best-performing one, the system provides **accurate, real-time predictions** through a user-friendly interface.
+## 🧠 Data Description
+
+| Column | Description |
+|---------|-------------|
+| NGO_Name | Name of the NGO |
+| Project_Name | Title of the project |
+| Sector | Focus area (Health, Education, Environment, etc.) |
+| Region | Geographic area of operation |
+| Country | Country of implementation |
+| Funding_Amount | Total funding received |
+| Beneficiaries | Number of people impacted |
+| Start_Date / End_Date | Project timeline |
+| Impact_Score | Quantitative measure of success |
+| Sustainability_Index | Long-term viability indicator |
+
+---
+
+## 🧮 Key Metrics (DAX Measures)
+
+- **Total Funding** = SUM(Funding_Amount)  
+- **Total Beneficiaries** = SUM(Beneficiaries)  
+- **Average Impact Score** = AVERAGE(Impact_Score)  
+- **Average Sustainability Index** = AVERAGE(Sustainability_Index)  
+- **Funding per Beneficiary** = Total Funding / Total Beneficiaries  
+- **Impact per 1000 Funding** = Average Impact Score / (Total Funding / 1000)
+
+---
+
+## 🪄 Insights Gained
+
+- The **Education and Health sectors** show the highest impact efficiency per funding unit.  
+- Regions with **longer project durations** tend to have higher sustainability.  
+- **Funding allocation** is uneven across sectors — suggesting opportunities for optimization.  
+- Projects with **balanced funding and high sustainability** have better long-term results.
+
+---
+
+## 📤 Deliverables
+
+- ✅ Power BI Dashboard (`.pbix`)
+- ✅ Data Processing Script (Power Query + DAX)
+- ✅ PowerPoint Presentation summarizing insights
+- ✅ Dataset (CSV/Excel)
+- ✅ README Documentation
+
+---
+
+## 🚀 How to Use
+
+1. Open Power BI Desktop.
+2. Import dataset (`ngo_data.csv` or Excel file).
+3. Load Power Query transformations.
+4. Create DAX measures as listed above.
+5. Build visuals following the layout in this README.
+6. Publish the dashboard to Power BI Service.
+7. Export dashboard insights into PowerPoint.
+
+---
+
+## 🌐 Future Enhancements
+
+- Automate data refresh using Power BI Gateway.
+- Integrate live data from NGO APIs or Google Sheets.
+- Add predictive models (e.g., regression on impact score).
+- Enable donor-specific dashboards and funding filters.
+
+---
+
+## 🧑‍💼 Author
+
+**Project Title:** NGO Impact Analysis Dashboard  
+**Developed by:** Sneha Biswas  
+**Tools Used:** Power BI, DAX, Power Query, Excel  
+**Purpose:** To measure and visualize NGO project performance and social impact.  
+
+---
+
+### ⭐ If you like this project, don’t forget to star the repository!
+
